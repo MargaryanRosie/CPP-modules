@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include <iostream>
 
 class Bureaucrat
 {
@@ -34,5 +35,7 @@ public:
     void increment();
     void decrement();
 };
+
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& b);
 
 #endif
