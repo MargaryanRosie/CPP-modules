@@ -2,63 +2,33 @@
 
 int main()
 {
-    Bureaucrat b1("Ann", 32);
-    Bureaucrat b2("Sam", 46);
+    Form form ("Form 1", 50, 10);
+    
+    std::cout << form << std::endl;
 
-    std::cout << b1 << std::endl;
-    std::cout << b2 << std::endl;
 
-    std::cout << "------------ Increment and decrement test ------------" << std::endl;
+    std::cout << "-------- Test signing ---------" << std::endl;
 
-    b1.increment();
-    b2.increment();
+    Bureaucrat brc("Alice", 50);
+    brc.signForm(form);
 
-    std::cout << b1 << std::endl;
-    std::cout << b2 << std::endl;
+    std::cout << form << std::endl;
 
-    b1.decrement();
-    b2.decrement();
+    Bureaucrat bob("Bob", 80);
 
-    std::cout << b1 << std::endl;
-    std::cout << b2 << std::endl;
+    bob.signForm(form);
 
-    std::cout << "------------ Exceptions test ------------" << std::endl;
+    std::cout << form << std::endl;
 
-    try
-    {
-        Bureaucrat b3("Lima", 0);
-    }
-    catch(const std::exception& e)
-    {
-        std::cout << e.what() << std::endl;
-    }
+
+    std::cout << "--------- Test Invalid Form ----------" << std::endl;
 
     try
     {
-        Bureaucrat b4("Ken", 170);
-    }
-    catch(const std::exception& e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-
-    try
-    {
-        Bureaucrat b5("John", 1);
-        b5.increment();
+        Form invalidForm("Invalid Form", 0, 20);
     }
     catch (const std::exception& e)
     {
-        std::cout << e.what() << std::endl;
+        std::cout << "Exception: " << e.what() << std::endl;
     }
-
-    try
-    {
-        Bureaucrat b6("Kate", 150);
-        b6.decrement();
-    }
-    catch (const std::exception& e)
-    {
-        std::cout << e.what() << std::endl;
-    }   
 }
