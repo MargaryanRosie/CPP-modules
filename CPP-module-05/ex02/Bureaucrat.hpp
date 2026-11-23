@@ -5,7 +5,7 @@
 #include <string>
 #include <exception>
 #include <iostream>
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Bureaucrat
 {
@@ -36,7 +36,7 @@ public:
     void increment();
     void decrement();
 
-    void signForm(Form& form);
+    void signForm(AForm& AForm);
 };
 
 std::ostream& operator<<(std::ostream& out, const Bureaucrat& b);
