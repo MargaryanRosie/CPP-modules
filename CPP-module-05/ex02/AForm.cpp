@@ -82,6 +82,11 @@ const char* AForm::FormNotSignedException::what() const throw()
     return "The form is not signed!";
 }
 
+const char* AForm::FileOpenException::what() const throw()
+{
+    return "The file cannot open!";
+}
+
 std::ostream& operator<<(std::ostream& s, const AForm& AForm)
 {
     s << "AForm name: " << AForm.getName() << std::endl;

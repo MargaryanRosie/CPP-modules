@@ -49,6 +49,12 @@ public:
         const char* what() const throw();
     };
 
+    class FileOpenException : public std::exception
+    {
+    public:
+        const char* what() const throw();
+    };
+
     void execute(Bureaucrat const & executor) const;
 };
 

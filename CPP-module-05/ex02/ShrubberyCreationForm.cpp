@@ -1,4 +1,7 @@
 #include "ShrubberyCreationForm.hpp"
+#include <iostream>
+#include <fstream>
+
 
 ShrubberyCreationForm::ShrubberyCreationForm()
     : AForm("ShrubberyCreationForm", 145, 137), target("Default")
@@ -6,9 +9,8 @@ ShrubberyCreationForm::ShrubberyCreationForm()
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& targetName)
-    : AForm("ShrubberyCreationForm", 145, 137)
+    : AForm("ShrubberyCreationForm", 145, 137), target(targetName)
 {
-    target = targetName;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other)
@@ -32,5 +34,35 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void ShrubberyCreationForm::action() const
 {
-    std::cout << "Hello World" << std::endl;
+    std::string fileName = target + "_shrubbery";
+    std::ofstream out(fileName.c_str());
+
+    if(!out)
+        throw FileOpenException();
+
+    out << "    *" << std::endl;
+    out << "   ***" << std::endl;
+    out << "  *****" << std::endl;
+    out << " *******" << std::endl;
+    out << "    |" << std::endl;
+    out << "    |" << std::endl;
+    out << std::endl;
+
+
+    out << "      ^" << std::endl;
+    out << "     ^^^" << std::endl;
+    out << "    ^^^^^" << std::endl;
+    out << "   ^^^^^^^" << std::endl;
+    out << "  ^^^^^^^^^" << std::endl;
+    out << " ^^^^^^^^^^^" << std::endl;
+    out << "      |||" << std::endl;
+    out << "      |||" << std::endl;
+    out << std::endl;
+
+    out << "   @@@" << std::endl;
+    out << "  @@@@@" << std::endl;
+    out << " @@@@@@@" << std::endl;
+    out << "  @@@@@" << std::endl;
+    out << "    |" << std::endl;
+    out << "    |" << std::endl;
 }

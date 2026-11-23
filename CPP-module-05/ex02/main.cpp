@@ -9,7 +9,5 @@ int main()
 
     brc.signForm(a);
 
-    b = a;
-
-    std::cout << b << std::endl;
+    a.execute(brc);
 }
