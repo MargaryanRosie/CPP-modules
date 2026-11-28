@@ -4,6 +4,9 @@
 #include <string>
 #include <iostream>
 #include <exception>
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 class Bureaucrat;
 
